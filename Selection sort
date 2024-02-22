@@ -1,20 +1,24 @@
 #include<stdio.h>
 void selectionsort(int a[],int n)
 {
-    int i,j,temp;
+    int i,j,temp,minIndex;
     for(i=0;i<n-1;i++)
     {
+    minIndex=i;
     for(j=i+1;j<n;j++)
     {
-    if(a[i]>a[j])
+    if(a[j]<a[minIndex])
         {
-        temp=a[i];
-        a[i]=a[j];
-        a[j]=temp;
+        minIndex=j;
         }
     }
+    if(minIndex!=i)
+        temp=a[minIndex];
+        a[minIndex]=a[i];
+        a[i]=temp;
+        }
     }
-}
+    
 void printarray(int a[],int size)
 {
     int i;
