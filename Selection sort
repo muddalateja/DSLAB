@@ -18,7 +18,7 @@ void selectionsort(int a[],int n)
         a[i]=temp;
         }
     }
-    
+   
 void printarray(int a[],int size)
 {
     int i;
