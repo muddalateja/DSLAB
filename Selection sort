@@ -1,7 +1,13 @@
 #include<stdio.h>
+void swap(int *x, int *y) 
+{
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+}
 void selectionsort(int a[],int n)
 {
-    int i,j,temp,minIndex;
+    int i,j,minIndex;
     for(i=0;i<n-1;i++)
     {
     minIndex=i;
@@ -12,18 +18,19 @@ void selectionsort(int a[],int n)
         minIndex=j;
         }
     }
-    if(minIndex!=i)
-        temp=a[minIndex];
-        a[minIndex]=a[i];
-        a[i]=temp;
-        }
+     if(a[minIndex]!=i)
+   {
+      swap(&a[minIndex],&a[i]);
+     }
+   }
     }
-    void printarray(int a[],int size)
-    {
+    
+  void printarray(int a[],int size)
+  {
     int i;
     for(i=0;i<size;i++)
     printf("%d ",a[i]);
-    }
+  }
     int main()
     {
     int a[20],i,n;
@@ -33,6 +40,6 @@ void selectionsort(int a[],int n)
     for(i=0;i<n;i++)
     scanf("%d",&a[i]);
     selectionsort(a ,n);
-    printf("sorted array :");
+    printf("sorted array ");
     printarray(a ,n);
 } 
