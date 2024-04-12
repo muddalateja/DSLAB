@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 void main(){
 int a[100],ch,n,i,top=-1;
 do
@@ -33,6 +34,8 @@ case 3: if(top==-1)
         else
         for(i=top;i>=0;i--)
         printf("\n%d",a[i]);
+        break;
+case 4: exit(1);
         break;
         default: printf("\nInvalid choice");
         }
